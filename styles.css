@@ -1,0 +1,19 @@
+body {
+  font-family: 'Ranchers', cursive;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.header {
+  padding: 15px;
+}
