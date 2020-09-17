@@ -12,25 +12,57 @@
     <div class="header">
       <h2>Vanilla Quiz</h2>
     </div>
-    <div class="quiz">
-      <h3 id="question"></h3>
-      <label id="a1" class="container">
-        <input type="radio" checked="checked" name="radio">
-        <span class="checkmark"></span>
-      </label>
-      <label id="a2" class="container">
-        <input type="radio" name="radio">
-        <span class="checkmark"></span>
-      </label>
-      <label id="a3" class="container">
-        <input type="radio" name="radio">
-        <span class="checkmark"></span>
-      </label>
-      <label id="a4" class="container">
-        <input type="radio" name="radio">
-        <span class="checkmark"></span>
-      </label>
-      <button class="submit">Submit</button>
+    <div class="main">
+      <div class="quiz">
+        <h3 id="question"></h3>
+        <label id="a1" class="container">
+          <input type="radio" checked="checked" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label id="a2" class="container">
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label id="a3" class="container">
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label id="a4" class="container">
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <button class="submit">Submit</button>
+      </div>
+      <div class="settings">
+        <h3 style="text-align: center;">Set up your Quiz!</h3>
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="general">General Knowledge</option>
+          <option value="animals">Animals</option>
+          <option value="games">Video Games</option>
+          <option value="history">History</option>
+          <option value="sports">Sports</option>
+        </select>
+        <div class="mt30">
+          <label for="difficulty">Difficulty</label>
+          <label id="easy" class="container" style="display: inline; margin-left: 30px;">Easy
+            <input type="radio" name="radio">
+            <span class="checkmark" style="margin-top: 4px;"></span>
+          </label>
+          <label id="medium" class="container" style="display: inline; margin-left: 30px;">Medium
+            <input type="radio" name="radio">
+            <span class="checkmark" style="margin-top: 4px;"></span>
+          </label>
+          <label id="hard" class="container" style="display: inline; margin-left: 30px;">Hard
+            <input type="radio" name="radio">
+            <span class="checkmark" style="margin-top: 4px;"></span>
+          </label>
+        </div>
+        <div class="mt30">
+          <label for="questions">Number of questions</label>
+        </div>  
+        <button class="submit">Start</button>
+      </div>  
     </div>
   </main>
   <script type="module" src="index.js"></script>

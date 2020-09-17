@@ -10,6 +10,10 @@
 body {
   font-family: 'Ranchers', cursive;
   background-color: var(--secondary-color);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
@@ -18,21 +22,70 @@ h2 {
   color: var(--primary-color);
 }
 
-main {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  width: 100vw;
-
-  gap: 4px;
-  grid-auto-rows: max-content;
+.mt30 {
+  margin-top: 30px;
 }
 
 .header {
   padding: 15px;
 }
 
-.quiz {
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.settings {
+
+  z-index: 1;
+}
+
+.settings select {
+  font-size: 20px;
+  font-family: 'Ranchers', cursive;
+  font-weight: 700;
+  line-height: 1.3;
+  color: white;
+  background-color: var(--primary-color);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 30px;
+  outline: none;
+  text-align: center;
+}
+
+.settings select::-ms-expand {
+  display: none;
+}
+
+.settings select:hover {
+  border-color: var(--hover-color);
+}
+
+.settings select:focus {
+  border-color: var(--hover-color);
+}
+
+.settings select option {
+  font-weight: bolder;
+  font-family: 'Ranchers', sans-serif;
+}
+
+.settings label {
+  font-size: 25px;
+}
+
+.quiz  {
+  visibility: hidden;
+  z-index: 0;
+}
+
+.quiz, .settings {
+  position: absolute;
   padding: 35px;
   max-width: 560px;
   background-color: var(--tertiary-color);
@@ -42,7 +95,7 @@ main {
   box-shadow: 10px 10px 3px -4px var(--shadow-color);
 }
 
-.quiz h3 {
+h3 {
   display: block;
   width: 550px;
   font-size: 35px;
