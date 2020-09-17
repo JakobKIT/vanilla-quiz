@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vanilla Quiz</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet"> -->
 </head>
 <body>
   <main>
@@ -45,23 +46,24 @@
         </select>
         <div class="mt30">
           <label for="difficulty">Difficulty</label>
-          <label id="easy" class="container" style="display: inline; margin-left: 30px;">Easy
-            <input type="radio" name="radio">
-            <span class="checkmark" style="margin-top: 4px;"></span>
+          <label class="container" style="display: inline; margin-left: 30px;">Easy
+            <input type="radio" name="radio" id="easy">
+            <span class="checkmark" style="margin-top: 2px;"></span>
           </label>
-          <label id="medium" class="container" style="display: inline; margin-left: 30px;">Medium
-            <input type="radio" name="radio">
-            <span class="checkmark" style="margin-top: 4px;"></span>
+          <label class="container" style="display: inline; margin-left: 30px;">Medium
+            <input type="radio" name="radio" id="medium">
+            <span class="checkmark" style="margin-top: 2px;"></span>
           </label>
-          <label id="hard" class="container" style="display: inline; margin-left: 30px;">Hard
-            <input type="radio" name="radio">
-            <span class="checkmark" style="margin-top: 4px;"></span>
+          <label  class="container" style="display: inline; margin-left: 30px;">Hard
+            <input type="radio" name="radio" id="hard">
+            <span class="checkmark" style="margin-top: 2px;"></span>
           </label>
         </div>
         <div class="mt30">
           <label for="questions">Number of questions</label>
+          <input type="number" name="questions" id="questions">
         </div>  
-        <button class="submit">Start</button>
+        <button id="start" class="submit">Start</button>
       </div>  
     </div>
   </main>
