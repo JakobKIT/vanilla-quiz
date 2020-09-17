@@ -1,3 +1,7 @@
+import Settings from './quiz/settings.js';
+
+new Settings();
+
 const testURL = 'https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=multiple';
 
 const question = document.querySelector('#question');
@@ -20,6 +24,7 @@ getQuestion().then(result => {
   console.log(result);
   const quiz = result.results[0];
   let answers = [quiz.correct_answer, ...quiz.incorrect_answers];
+
   // Shuffle the array (Fisher-Yates Algorithm)
   for (let i = answers.length - 1; i > 0; i--){
     const j = Math.floor(Math.random() * i)
@@ -32,7 +37,7 @@ getQuestion().then(result => {
   a2.innerHTML += answers[1];
   a3.innerHTML += answers[2];
   a4.innerHTML += answers[3];
-  
+
   question.innerHTML = quiz.question });
 
 console.log('Hi it works');
