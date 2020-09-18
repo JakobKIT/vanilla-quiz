@@ -2,14 +2,12 @@ import Settings from './quiz/settings.js';
 
 new Settings();
 
-const testURL = 'https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=multiple';
-
 const question = document.querySelector('#question');
 const a1 = document.querySelector('#a1');
 const a2 = document.querySelector('#a2');
 const a3 = document.querySelector('#a3');
 const a4 = document.querySelector('#a4');
-
+/* 
 const getQuestion = async () => {
   try {
     let response = await fetch(testURL);
@@ -38,6 +36,5 @@ getQuestion().then(result => {
   a3.innerHTML += answers[2];
   a4.innerHTML += answers[3];
 
-  question.innerHTML = quiz.question });
-
-console.log('Hi it works');
+  question.innerHTML = quiz.question 
+}); */
