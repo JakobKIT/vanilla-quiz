@@ -1,7 +1,9 @@
-import Question from './question.js';
+import Quiz from './quiz.js';
 
 class Settings {
   constructor() {
+    this.quizElement = document.querySelector('.quiz');
+    this.settingsElement = document.querySelector('.settings');
     this.category = document.querySelector('#category');
     this.difficulty = [
       document.querySelector('#easy'),
@@ -9,7 +11,7 @@ class Settings {
       document.querySelector('#hard'),
     ];
     this.numberOfQuestions = document.querySelector('#questions');
-    this.questions = [];
+    this.quiz = { };
     this.startButton = document.querySelector('#start');
     this.startButton.addEventListener('click', this.startQuiz.bind(this));
   }
@@ -23,10 +25,16 @@ class Settings {
       this.url = `https://opentdb.com/api.php?amount=${amount}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
 
       let data = await this.fetchData();
-      this.initializeQuestionsFromData(data);
+      this.toggleVisibility();
+      this.quiz = new Quiz(amount, data.results);
     } catch (error) {
       alert(error);
     }
+  }
+
+  toggleVisibility() {
+    this.settingsElement.style.visibility = 'hidden';
+    this.quizElement.style.visibility = 'visible';
   }
 
   async fetchData() {
@@ -34,10 +42,6 @@ class Settings {
     const result = await response.json();
 
     return result;
-  }
-
-  initializeQuestionsFromData(data) {
-    this.questions = data.results.map(question => new Question(question));
   }
 
   getCurrentDifficulty() {

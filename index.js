@@ -2,11 +2,7 @@ import Settings from './quiz/settings.js';
 
 new Settings();
 
-const question = document.querySelector('#question');
-const a1 = document.querySelector('#a1');
-const a2 = document.querySelector('#a2');
-const a3 = document.querySelector('#a3');
-const a4 = document.querySelector('#a4');
+
 /* 
 const getQuestion = async () => {
   try {
