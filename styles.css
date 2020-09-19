@@ -87,7 +87,7 @@ h2 {
 
 .quiz, .settings {
   position: absolute;
-  padding: 35px;
+  padding: 0px 35px 35px 35px;
   max-width: 560px;
   background-color: var(--tertiary-color);
   border-radius: 5px;
@@ -120,6 +120,25 @@ h3 {
   background-color: var(--hover-color);
   cursor: pointer;
   color: #FAF33E;
+}
+
+/* The container */
+.count {
+  display: block;
+  left: 75%;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.count p {
+  position: absolute;
+  font-size: 40px;
+}
+
+.total {
+  margin-left: 50px;
 }
 
 /* The container */
