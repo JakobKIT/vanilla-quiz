@@ -13,7 +13,8 @@ class Question {
       document.querySelector('#a2'),
       document.querySelector('#a3'),
       document.querySelector('#a4'),
-    ]
+    ];
+    this.isCorrect = false;
   }
 
   shuffleAnswers(answers) {
@@ -26,8 +27,9 @@ class Question {
     return answers;
   }
 
-  answer() {
-    console.log(this.answerElements);
+  answer(checkedElement) {
+     this.isCorrect = (checkedElement[0].textContent === this.correctAnswer) ? true : false;
+     console.log(this.isCorrect);
   }
 
   render() {

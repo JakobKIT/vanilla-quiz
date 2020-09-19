@@ -19,9 +19,14 @@ class Quiz {
   }
 
   nextQuestion() {
-    this.questions[this.answeredAmount].answer();
-    this.answeredAmount++;
-    this.renderQuestion();
+    const checkedElement = this.questions[this.answeredAmount].answerElements.filter(el => el.firstChild.checked);
+    if (checkedElement.length === 0) {
+      alert('You need to select an answer');
+    } else {
+      this.questions[this.answeredAmount].answer(checkedElement)
+      this.answeredAmount++;
+      this.renderQuestion();
+    }
   }
 }
 
