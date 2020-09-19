@@ -1,13 +1,18 @@
+import Final from './final.js';
 import Question from './question.js'
 
 class Quiz {
-  constructor(amount, questions) {
+  constructor(quizElement, amount, questions) {
+    this.quizElement = quizElement;
     this.currentElement = document.querySelector('.current');
     this.totalElement = document.querySelector('.total');
+    this.nextButton = document.querySelector('#next');
+    this.finalElement = document.querySelector('.final')
+
     this.totalAmount = amount;
     this.answeredAmount = 0;
     this.questions = this.setQuestions(questions);
-    this.nextButton = document.querySelector('#next');
+    
     this.nextButton.addEventListener('click', this.nextQuestion.bind(this));
     this.renderQuestion();
   }
@@ -30,12 +35,29 @@ class Quiz {
       this.questions[this.answeredAmount].answer(checkedElement)
       this.showResult();
       this.answeredAmount++;
-      this.renderQuestion();
+      (this.answeredAmount < this.totalAmount) ? this.renderQuestion() : this.renderFinalPage();
     }
   }
 
   showResult() {
     this.questions[this.answeredAmount].isCorrect ? alert('Correct answer :)') : alert('Wrong answer :(');
+  }
+
+  renderFinalPage() {
+    this.quizElement.style.visibility = 'hidden';
+    this.finalElement.style.visibility = 'visible';
+    const correctAnswersTotal = this.calculateCorrectAnswers();
+    this.final = new Final(correctAnswersTotal, this.totalAmount);
+  }
+
+  calculateCorrectAnswers() {
+    let count = 0;
+    this.questions.forEach(el => {
+      if (el.isCorrect) {
+        count++;
+      }
+    });
+    return count;
   }
 }
 

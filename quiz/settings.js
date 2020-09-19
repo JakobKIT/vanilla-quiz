@@ -26,7 +26,7 @@ class Settings {
 
       let data = await this.fetchData();
       this.toggleVisibility();
-      this.quiz = new Quiz(amount, data.results);
+      this.quiz = new Quiz(this.quizElement, amount, data.results);
     } catch (error) {
       alert(error);
     }

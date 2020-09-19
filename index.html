@@ -14,6 +14,12 @@
       <h2>Vanilla Quiz</h2>
     </div>
     <div class="main">
+      <div class="final">
+        <h3>You answered all of the questions!</h3>
+        <p>Score: </p><p class="score"></p>
+        <h4>Want to try it again?</h4>
+        <button id="again" class="submit">Again</button>
+      </div>
       <div class="quiz">
         <div class="count">
           <p class="current">0</p><p style="margin-left:40px"> / </p><p class="total"></p>
@@ -64,7 +70,7 @@
         </div>
         <div class="mt30">
           <label for="questions">Number of questions</label>
-          <input type="number" name="questions" id="questions">
+          <input name="questions" id="questions" type="text" pattern="[0-9]*" />
         </div>  
         <button id="start" class="submit">Start</button>
       </div>  
