@@ -4,7 +4,7 @@
   --tertiary-color: #7FC6A4;
   --quaternary-color: #55505C;
   --hover-color: #4e616b;
-  --shadow-color: rgb(48, 66, 11);
+  --shadow-color:rgba(57, 127, 93, 0.4);
   --font-style: 'Questrial';
 }
 
@@ -123,10 +123,10 @@ h2 {
   padding: 0px 35px 35px 35px;
   max-width: 560px;
   background-color: var(--tertiary-color);
-  border-radius: 5px;
-  -webkit-box-shadow: 10px 10px 3px -4px var(--shadow-color);
+  border-radius: 7px;
+  -webkit-box-shadow: 10px 10px 5px -4px var(--shadow-color);
   -moz-box-shadow: 10px 10px 3px -4px var(--shadow-color);
-  box-shadow: 10px 10px 3px -4px var(--shadow-color);
+  box-shadow: 10px 10px 5px -4px var(--shadow-color);
 }
 
 h3 {
