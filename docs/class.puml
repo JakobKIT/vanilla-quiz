@@ -1,0 +1,21 @@
+@startuml
+
+Class Settings
+Settings : Quiz quiz
+Settings : startQuiz()
+Class Quiz
+Quiz : Question[] questions
+Quiz : Final final
+Quiz : nextQuestion()
+Quiz : endQuiz()
+Class Final
+Final : render()
+Class Question
+Question : render()
+
+Question <|-- Quiz
+Final <|-- Quiz
+Quiz <|-- Settings
+
+
+@enduml

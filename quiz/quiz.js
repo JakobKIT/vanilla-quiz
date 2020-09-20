@@ -35,7 +35,7 @@ class Quiz {
       this.questions[this.answeredAmount].answer(checkedElement)
       this.showResult();
       this.answeredAmount++;
-      (this.answeredAmount < this.totalAmount) ? this.renderQuestion() : this.renderFinalPage();
+      (this.answeredAmount < this.totalAmount) ? this.renderQuestion() : this.endQuiz();
     }
   }
 
@@ -43,7 +43,7 @@ class Quiz {
     this.questions[this.answeredAmount].isCorrect ? alert('Correct answer :)') : alert('Wrong answer :(');
   }
 
-  renderFinalPage() {
+  endQuiz() {
     this.quizElement.style.visibility = 'hidden';
     this.finalElement.style.visibility = 'visible';
     const correctAnswersTotal = this.calculateCorrectAnswers();
