@@ -64,7 +64,7 @@ h2 {
 #questions {
   font-size: 20px;
   font-family: var(--font-style), 'Ranchers', cursive;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
   color: white;
   background-color: var(--primary-color);
@@ -75,6 +75,7 @@ h2 {
   margin-left: 30px;
   outline: none;
   text-align: center;
+  width: 120px;
 }
 .settings select {
   font-size: 20px;
@@ -89,7 +90,7 @@ h2 {
   border: none;
   padding: 5px;
   border-radius: 5px;
-  margin-left: 30px;
+  margin-left: 20px;
   outline: none;
   text-align: center;
 }
@@ -113,6 +114,7 @@ h2 {
 
 .settings label {
   font-size: 25px;
+  margin-right: 16px;
 }
 
 
@@ -145,6 +147,7 @@ h3 {
   font-size: 1.8rem;
   margin-top: 20px;
   border-radius: 5px;
+  letter-spacing: 2px;
 }
 
 .submit:hover {
@@ -196,8 +199,8 @@ h3 {
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: 0px;
   height: 25px;
   width: 25px;
   background-color: white;
