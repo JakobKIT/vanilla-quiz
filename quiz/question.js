@@ -1,12 +1,5 @@
 class Question {
   constructor(question) {
-    this.answers = this.shuffleAnswers([
-      question.correct_answer, 
-      ...question.incorrect_answers
-    ]);
-    this.correctAnswer = question.correct_answer;
-    this.question = question.question;
-
     this.questionElement = document.querySelector('#question');
     this.answerElements = [
       document.querySelector('#a1'),
@@ -14,7 +7,15 @@ class Question {
       document.querySelector('#a3'),
       document.querySelector('#a4'),
     ];
+
+    this.correctAnswer = question.correct_answer;
+    this.question = question.question;
     this.isCorrect = false;
+
+    this.answers = this.shuffleAnswers([
+      question.correct_answer, 
+      ...question.incorrect_answers
+    ]);
   }
 
   shuffleAnswers(answers) {
@@ -29,7 +30,6 @@ class Question {
 
   answer(checkedElement) {
      this.isCorrect = (checkedElement[0].textContent === this.correctAnswer) ? true : false;
-     console.log(this.isCorrect);
   }
 
   render() {

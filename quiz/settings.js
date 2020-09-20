@@ -5,14 +5,16 @@ class Settings {
     this.quizElement = document.querySelector('.quiz');
     this.settingsElement = document.querySelector('.settings');
     this.category = document.querySelector('#category');
+    this.numberOfQuestions = document.querySelector('#questions');
     this.difficulty = [
       document.querySelector('#easy'),
       document.querySelector('#medium'),
       document.querySelector('#hard'),
     ];
-    this.numberOfQuestions = document.querySelector('#questions');
-    this.quiz = { };
     this.startButton = document.querySelector('#start');
+
+    this.quiz = { };
+
     this.startButton.addEventListener('click', this.startQuiz.bind(this));
   }
 
@@ -50,7 +52,7 @@ class Settings {
     if (checkedDifficulty.length === 1) {
       return checkedDifficulty[0].id;
     } else {
-      throw new Error('Something went wrong!');
+      throw new Error('Please select a difficulty!');
     }
   }
 
@@ -59,7 +61,7 @@ class Settings {
     if (this.validate(amount)) {
       return amount;
     }
-    throw new Error('ERROR NEEEEEIN!');
+    throw new Error('Please enter a number of questions between 1 and 50!');
   }
 
   validate(value) {
