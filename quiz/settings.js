@@ -58,15 +58,11 @@ class Settings {
 
   getAmount() {
     const amount = this.numberOfQuestions.value;
-    if (this.validate(amount)) {
+    // Not negative, not 0 and not over 50
+    if (amount > 0 && amount < 51) {
       return amount;
     }
     throw new Error('Please enter a number of questions between 1 and 50!');
-  }
-
-  validate(value) {
-    // Not negative, not 0 and not over 50
-    return (value > 0 && value < 51) ? true : false;
   }
 }
 
