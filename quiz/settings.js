@@ -24,9 +24,9 @@ class Settings {
       const categoryId = this.category.value;
       const difficulty = this.getCurrentDifficulty();
 
-      this.url = `https://opentdb.com/api.php?amount=${amount}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
+      const url = `https://opentdb.com/api.php?amount=${amount}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
 
-      let data = await this.fetchData();
+      let data = await this.fetchData(url);
       this.toggleVisibility();
       this.quiz = new Quiz(this.quizElement, amount, data.results);
     } catch (error) {
@@ -39,8 +39,8 @@ class Settings {
     this.quizElement.style.visibility = 'visible';
   }
 
-  async fetchData() {
-    const response = await fetch(this.url);
+  async fetchData(url) {
+    const response = await fetch(url);
     const result = await response.json();
 
     return result;
